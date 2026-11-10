@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  deplay:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,8 +18,8 @@ jobs:
       
       - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER}}
-          user: ${{ secrets.USER}}
-          password: ${{ secrets.PASSWORD}}
+          server: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.USER }}
+          password: ${{ secrets.PASSWORD }}
           local-dir: dist/
           server-dir: /
